@@ -6,6 +6,13 @@ Versioning follows [Semantic Versioning 2.0.0](https://semver.org/).
 
 ---
 
+## [15.1.0](https://github.com/NoahDuongMaster/ai-first-nextjs-boilerplate/compare/v15.0.3...v15.1.0) (2026-06-21)
+
+
+### Features
+
+* **dapp:** no-issue  enhance project configuration and add new components ([f04579d](https://github.com/NoahDuongMaster/ai-first-nextjs-boilerplate/commit/f04579d15edb13a172c988bca8b974ade7dbfc08))
+
 ## [Unreleased]
 
 ### Added

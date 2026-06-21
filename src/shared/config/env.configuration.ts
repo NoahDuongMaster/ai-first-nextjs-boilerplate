@@ -1,6 +1,11 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
+// Cloudflare Workers receive env vars via bindings, not process.env.
+// Skip validation when process.env is unpopulated (e.g. wrangler upload).
+const isWorkerRuntime =
+  typeof process === 'undefined' || !process.env?.NODE_ENV;
+
 const env = {
   client: createEnv({
     client: {
@@ -19,6 +24,7 @@ const env = {
       NEXT_PUBLIC_CORS_COOKIE: process.env.NEXT_PUBLIC_CORS_COOKIE,
       NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
     },
+    skipValidation: isWorkerRuntime,
   }),
 
   server: createEnv({
@@ -28,6 +34,7 @@ const env = {
       CORS_RESOURCE: z.string().nullish(),
     },
     experimental__runtimeEnv: process.env,
+    skipValidation: isWorkerRuntime,
   }),
 };
 

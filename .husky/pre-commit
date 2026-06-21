@@ -1,12 +1,5 @@
 #!/bin/sh
 npx lint-staged
 
-# AI code review (pre-commit) via PR-Agent (open-source, Apache 2.0)
-# Skip in CI or when SKIP_AI_REVIEW=1. Install: pip install pr-agent
-if [ -z "$CI" ] && [ -z "$SKIP_AI_REVIEW" ] && command -v pr-agent >/dev/null 2>&1; then
-  DIFF=$(git diff --staged)
-  if [ -n "$DIFF" ]; then
-    echo "$DIFF" | pr-agent review --local || \
-      echo "[AI review] Pre-commit review skipped. Will run at PR level via GitHub Action."
-  fi
-fi
+# AI code review runs at PR level via PR-Agent GitHub Action (.github/workflows/pr-agent.yml)
+# Config: .pr_agent.toml

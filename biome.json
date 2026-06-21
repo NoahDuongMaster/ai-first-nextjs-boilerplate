@@ -71,7 +71,8 @@
       "!**/dist",
       "!**/.husky",
       "!**/*.config.cjs",
-      "!**/src/styles"
+      "!**/src/styles",
+      "!next-env.d.ts"
     ]
   }
 }

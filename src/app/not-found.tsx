@@ -10,7 +10,7 @@ import { flex } from '@/styled-system/patterns';
 const NotFound = () => {
   const router = useRouter();
   return (
-    <section className={css({ bg: 'background' })}>
+    <main className={css({ bg: 'background' })}>
       <div
         className={flex({
           minH: '100vh',
@@ -125,7 +125,7 @@ const NotFound = () => {
           />
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

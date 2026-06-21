@@ -15,7 +15,7 @@ function ErrorPage({
   const router = useRouter();
 
   return (
-    <section className={css({ bg: 'background' })}>
+    <main className={css({ bg: 'background' })}>
       <div
         className={flex({
           minH: '100vh',
@@ -108,7 +108,7 @@ function ErrorPage({
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
 

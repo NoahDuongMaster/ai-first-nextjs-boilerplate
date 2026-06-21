@@ -24,7 +24,7 @@ const env = {
   server: createEnv({
     server: {
       SESSION_SECRET: z.string().min(32),
-      CORS_ORIGIN: z.string().nullish(),
+      CORS_ORIGINS: z.string().nullish(),
       CORS_RESOURCE: z.string().nullish(),
     },
     experimental__runtimeEnv: process.env,

@@ -33,6 +33,15 @@ jobs:
       - name: Install Chromium
         run: npx playwright install chromium --with-deps
 
+      - name: Create .dev.vars for vinext Workers runtime
+        run: |
+          cat <<EOF > .dev.vars
+          NEXT_PUBLIC_PROJECT_NAME=${{ env.NEXT_PUBLIC_PROJECT_NAME }}
+          NEXT_PUBLIC_API_ENDPOINT=${{ env.NEXT_PUBLIC_API_ENDPOINT }}
+          NEXT_PUBLIC_BASE_URL=${{ env.NEXT_PUBLIC_BASE_URL }}
+          SESSION_SECRET=${{ env.SESSION_SECRET }}
+          EOF
+
       - name: Build
         run: npm run build
 
